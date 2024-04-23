@@ -30,7 +30,18 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        // \Log::debug($request);
+
+        $data = $request->validate([
+            'note' => ['required', 'string']
+        ]);
+        $data['user_id'] = 1;
+
+        Note::create($data);
+
+        return redirect('/note');
+
     }
 
     /**
