@@ -1,7 +1,7 @@
 <x-layout>
     <h1>Create form</h1>
 
-    <form action="/note" method="post">
+    <form action="{{ route('note.store') }}" method="post">
         @csrf
 
         <div>
